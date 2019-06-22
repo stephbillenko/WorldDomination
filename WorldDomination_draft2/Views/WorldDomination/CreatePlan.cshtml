@@ -1,0 +1,77 @@
+﻿@model WorldDomination_draft2.Models.Plan
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create a new Plan</title>
+</head>
+<body>
+    <div>
+
+        <h1>Mwahahahahaha!!!</h1>
+        <h2>Next Takeover</h2>
+        <h3>Select plan details...</h3>
+
+        @using (Html.BeginForm("CreatePlan", "WorldDomination", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="row">
+                <div class="col-sm-2">
+                    @Html.LabelFor(model => model.planId, new { style = "float:right;" })
+                </div>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(model => model.planId)
+                </div>
+            </div><br />
+
+            <div class="row">
+                <div class="col-sm-2">
+                    @Html.LabelFor(model => model.name, new { style = "float:right;" })
+                </div>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(model => model.name)
+                </div>
+            </div><br />
+
+            <div class="row">
+                <div class="col-sm-2">
+                    @Html.LabelFor(model => model.country, new { style = "float:right;" })
+                </div>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(model => model.country)
+                </div>
+            </div><br />
+
+            <div class="row">
+                <div class="col-sm-2">
+                    @Html.LabelFor(model => model.date, new { style = "float:right;" })
+                </div>
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(model => model.date)
+                </div>
+            </div><br />
+
+            <div class="row">
+                <div class="col-sm-2">
+                    @Html.LabelFor(model => model.takeoverMethod, new { style = "float:right;" })
+                </div>
+                <div class="col-sm-8">
+                    @Html.DropDownListFor(model => model.takeoverMethod, Model.takeoverMethodList)
+                </div>
+            </div><br />
+
+
+
+            <br />
+            <input type="submit" value="Save Plan!" id="btnSubmit" />
+
+        }
+
+    </div>
+
+
+</body>
+</html>

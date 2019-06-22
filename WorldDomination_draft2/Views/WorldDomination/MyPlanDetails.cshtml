@@ -1,0 +1,50 @@
+﻿@model WorldDomination_draft2.Models.Plan
+@{
+    ViewBag.Title = "PlanDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Review Plan Details</h2>
+
+<div class="row">
+    <div class="col-sm-2">
+        @Html.LabelFor(model => model.name, new { style = "float:right;" })
+    </div>
+    <div class="col-sm-8">
+        @Html.DisplayFor(model => model.name)
+    </div>
+</div><br />
+
+<div class="row">
+    <div class="col-sm-2">
+        @Html.LabelFor(model => model.country, new { style = "float:right;" })
+    </div>
+    <div class="col-sm-8">
+        @Html.DisplayFor(model => model.country)
+    </div>
+</div><br />
+
+<div class="row">
+    <div class="col-sm-2">
+        @Html.LabelFor(model => model.date, new { style = "float:right;" })
+    </div>
+    <div class="col-sm-8">
+        @Html.DisplayFor(model => model.date)
+    </div>
+</div><br />
+
+<div class="row">
+    <div class="col-sm-2">
+        @Html.LabelFor(model => model.takeoverMethod, new { style = "float:right;" })
+    </div>
+    <div class="col-sm-8">
+        @Html.DisplayFor(model => model.takeoverMethod)
+    </div>
+</div><br />
+
+
+
+<br />
+@Html.ActionLink("Back to List", "ListPlans")
+
+

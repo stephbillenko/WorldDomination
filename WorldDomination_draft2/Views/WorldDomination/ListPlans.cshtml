@@ -1,0 +1,58 @@
+﻿@model WorldDomination_draft2.Models.ListOfPlans
+@{
+    ViewBag.Title = "ListPlans";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List of Plans</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Plan ID
+        </th>
+        <th>
+            Plan Name
+        </th>
+        <th>
+            Country to Take Over
+        </th>
+        <th>
+            Takeover Method
+        </th>
+        <th>
+            Takeover Date
+        </th>
+    </tr>
+
+ 
+   @foreach (var item in Model.plans )
+    {
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => item.planId)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.country)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.takeoverMethod)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.date)
+        </td>
+        <td>
+            @Html.ActionLink("details", "PlanDetails")
+        </td>
+    </tr>
+    }
+
+</table>
+
+
+
